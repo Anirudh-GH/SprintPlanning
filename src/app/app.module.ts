@@ -6,13 +6,15 @@ import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angul
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {RouterModule,Routes} from '@angular/router'
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { GoogleAuthComponent } from './components/google-auth/google-auth.component';
 
 // Client id for the google oauth. This is used for validation of our application to google.
 // https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
@@ -26,7 +28,8 @@ let config = new AuthServiceConfig([
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GoogleAuthComponent
   ],
   // Injecting the social-login-module during the application startup!
   imports: [
