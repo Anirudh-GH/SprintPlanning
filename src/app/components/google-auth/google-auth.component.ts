@@ -18,7 +18,7 @@ export class GoogleAuthComponent implements OnInit {
   }
   form: FormGroup = new FormGroup({});
   user: any;
-  constructor(private _socioAuthServ: AuthService ) { }
+  constructor(private router:Router,private _socioAuthServ: AuthService ) { }
 
   singIn(platform : string): void {
     platform = GoogleLoginProvider.PROVIDER_ID;
@@ -26,9 +26,10 @@ export class GoogleAuthComponent implements OnInit {
       (response) => {
         console.log(platform + " logged in user data is= " , response);
         this.user = response;
+        this.router.navigateByUrl('/add-task');
       }
     );
-    // this.router.navigateByUrl('/add-task');
+    
   }
 
   

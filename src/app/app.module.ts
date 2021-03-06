@@ -46,6 +46,7 @@ let config = new AuthServiceConfig([
     MatButtonModule,
     MatDialogModule,
     RouterModule,
+    AppRoutingModule
 
   ],
   providers: [],
