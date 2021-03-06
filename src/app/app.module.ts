@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material'
 // Importing social login module and google login provider.
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular4-social-login';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {RouterModule,Routes} from '@angular/router'
@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GoogleAuthComponent } from './components/google-auth/google-auth.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 // Client id for the google oauth. This is used for validation of our application to google.
 // https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
@@ -29,7 +30,8 @@ let config = new AuthServiceConfig([
 @NgModule({
   declarations: [
     AppComponent,
-    GoogleAuthComponent
+    GoogleAuthComponent,
+    AddTaskComponent
   ],
   // Injecting the social-login-module during the application startup!
   imports: [
@@ -40,8 +42,10 @@ let config = new AuthServiceConfig([
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
+    RouterModule,
 
   ],
   providers: [],

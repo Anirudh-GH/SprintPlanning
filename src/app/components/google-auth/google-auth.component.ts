@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 import { AuthService, GoogleLoginProvider } from 'angular4-social-login';
 import {MatCardModule} from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,7 +18,7 @@ export class GoogleAuthComponent implements OnInit {
   }
   form: FormGroup = new FormGroup({});
   user: any;
-  constructor(private _socioAuthServ: AuthService) { }
+  constructor(private _socioAuthServ: AuthService ) { }
 
   singIn(platform : string): void {
     platform = GoogleLoginProvider.PROVIDER_ID;
@@ -28,6 +28,7 @@ export class GoogleAuthComponent implements OnInit {
         this.user = response;
       }
     );
+    // this.router.navigateByUrl('/add-task');
   }
 
   
